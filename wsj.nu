@@ -5,8 +5,8 @@
 #
 # cargo build --all-features (aliased to cbaf)
 # bring up nushell
-# cd target/debug
-# register -e capnp nu_plugin_query
+#
+# register -e capnp ./target/debug/nu_plugin_query
 #
 # check that the plugin was loaded correctly
 #
