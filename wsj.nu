@@ -16,6 +16,8 @@
 #    help commands | where is_plugin == $true
 # }
 #
+# source wsj.nu
+# wsj
 
 def wsj [] {
   let f = (fetch https://www.wsj.com/market-data/quotes/fx/USDCNY/historical-prices |query web -q 'tr' | str collect (char nl) | detect columns)
