@@ -10,7 +10,11 @@
 #
 # check that the plugin was loaded correctly
 #
+# help commands | where is_plugin == $true
 # chkplug
+# def chkplug [] {
+#    help commands | where is_plugin == $true
+# }
 #
 
 def wsj [] {
