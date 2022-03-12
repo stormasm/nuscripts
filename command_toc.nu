@@ -1,2 +1,4 @@
 
-['nu', 'shell'] | str collect ' | ' 
+help commands | select name
+
+['nu', 'shell'] | str collect ' | '
