@@ -31,9 +31,6 @@ def contrast_colour [ colour:int ] {
 }
 
 def print_colour [ colour:int ] {
-#    let contrast = (contrast_colour $colour)
-#    let bg_color = $"(ansi idx_bg)($colour)m" # Start block of colour
-#    let fg_color = $"(ansi idx_fg)($contrast)m" # In contrast, print number
     let text = $"($colour | into string | str lpad -c ' ' -l 3)(ansi reset)"
     $text + " "
 }
@@ -62,4 +59,4 @@ def print_blocks [start:int, end:int, block-cols:int, block-rows:int, blocks-per
   } | str collect
 }
 
-print_blocks 16 123 6 6 3 # 6x6x6 colour cube between 16 and 123 inclusive
+print_blocks 16 123 6 6 3
