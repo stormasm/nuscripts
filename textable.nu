@@ -1,35 +1,3 @@
-def contrast_colour [ colour:int ] {
-    # The first 16 colors
-    if $colour < 16 {
-        if $colour == 0 {
-            15
-        } else {
-            0
-        }
-    } else {
-      # The gray colors
-      if $colour > 231 {
-          if $colour < 244 {
-              15
-          } else {
-              0
-          }
-      } else {
-        # The rest
-        let r = ($colour - 16) / 36
-        let g = (($colour - 16) mod 36) / 6
-        let b = ($colour - 16) mod 6
-
-        let luminance = ($r * 299) + ($g * 587) + ($b * 114)
-        if $luminance > 2500 {
-            0
-        } else {
-            15
-        }
-      }
-    }
-}
-
 def print_colour [ colour:int ] {
     let text = $"($colour | into string | str lpad -c ' ' -l 3)(ansi reset)"
     $text + " "
