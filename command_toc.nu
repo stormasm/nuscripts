@@ -1,5 +1,6 @@
 
-let list = help commands | select name
+let $list = (help commands | select name | first 10)
+$list
 
 ['nu', 'shell'] | str collect ' | '
 
