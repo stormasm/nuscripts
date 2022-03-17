@@ -6,5 +6,5 @@ def get_data [name: string] {
   open $name
 }
 
-set_data 'jim'
+set_data 'database is initialized...'
 get_data db.txt
