@@ -1,13 +1,14 @@
 
-let previous_playname = ''
-
 def check_playname [name: string] {
-  if ($name == previous_playname) {
-    echo name
+
+  let previous_playname = get_data db.txt
+
+  if ($name == $previous_playname) {
+    echo $name
   } else {
-    let previous_playname = $name
+    set_data $name
+    echo $name
   }
-  echo $previous_playname
 }
 
 let filename = '/Users/ma/j/tmp17/nudata/csv/shakespeare.csv'
