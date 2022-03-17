@@ -11,6 +11,9 @@ def check_playname [name: string] {
   }
 }
 
-let filename = '/Users/ma/j/tmp17/nudata/csv/shakespeare.csv'
+def main [] {
+  let filename = '/Users/ma/j/tmp17/nudata/csv/shakespeare.csv'
+  open $filename | get play_name | each { |line| $line | str trim | check_playname $line}
+}
 
-open $filename | get play_name | each { |line| $line | str trim | check_playname $line}
+main
