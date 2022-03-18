@@ -1,8 +1,6 @@
 
 def check_playname [name: string] {
-
   let previous_playname = get_data db.txt
-
   if ($name == $previous_playname) {
     echo $name
   } else {
