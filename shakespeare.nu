@@ -19,6 +19,10 @@ def main [] {
 }
 
 def main1 [] {
+  open $filename | select line_id play_name | each { |id| $id}
+}
+
+def main2 [] {
   open $filename | select line_id play_name | each { |id| check_params $in.1 $in.2}
 }
 
