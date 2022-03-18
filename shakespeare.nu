@@ -1,7 +1,7 @@
 let filename = '/Users/ma/j/tmp17/nudata/csv/shakespeare.csv'
 
 def check_params [id: int, name: string] {
-  echo id name
+  echo $id $name
 }
 
 def check_playname [name: string] {
@@ -19,7 +19,7 @@ def main [] {
 }
 
 def main1 [] {
-  open $filename | select line_id play_name | each { |id| | $id}
+  open $filename | select line_id play_name | each { |id| check_params $in.1 $in.2}
 }
 
 main1
