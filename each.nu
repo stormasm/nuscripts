@@ -23,6 +23,10 @@ def ex03 [] {
 }
 
 def ex04 [] {
+  ls | select name size | each { |it| echo $it.name $it.size }
+}
+
+def ex05 [] {
   ls | each -n { |it| $"Number ($it.index) is size ($it.item.size)" }
 }
 
@@ -30,3 +34,4 @@ ex01
 ex02
 ex03
 ex04
+ex05
