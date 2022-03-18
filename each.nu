@@ -38,9 +38,9 @@ def ex06 [] {
   ls | each -n { |it| $"Number ($it.index) is size ($it.item.size)" }
 }
 
-#ex01
-#ex02
-#ex03
-#ex04
+ex01
+ex02
+ex03
+ex04
 ex05
-#ex06
+ex06
