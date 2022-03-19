@@ -5,21 +5,21 @@ def check_params2 [record] {
 }
 
 def check_params [id: int, name: string] {
-  check_playname $name
+  check_playname $id $name
 }
 
-def check_playname [name: string] {
+def check_playname [id: int, name: string] {
   let previous_playname = get_data db.txt
-  if ($name == $previous_playname) {
-    echo $name
-  } else {
+  if ($name != $previous_playname) {
     set_data $name
-    echo $name
+    echo $id $name
+  } else {
+    $nothing
   }
 }
 
 def main [] {
-  open $filename | get play_name | each { |line| $line | str trim | check_playname $line}
+  open $filename | get play_name | each { |line| $line | str trim | check_playname 1 $line}
 }
 
 def main1 [] {
