@@ -13,7 +13,7 @@ def check_playname [id: int, name: string] {
   let previous_playname = get_data db.txt
   if ($name != $previous_playname) {
     set_data $name
-    build-string $name " " ($id)
+    [[id, name];[($id), $name]]
   } else {
     $nothing
   }
@@ -24,7 +24,7 @@ def main [] {
 }
 
 def main1 [] {
-  open $filename | select line_id play_name | each { |id| check_params2 $id}
+  open $filename | select line_id play_name | each { |id| check_params2 $id} | flatten
 }
 
 def main2 [] {
