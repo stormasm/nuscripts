@@ -1,6 +1,14 @@
 let filename = '/Users/ma/j/tmp17/nudata/csv/shakespeare.csv'
 #let filename = '/Users/ma/j/tmp17/dataset/csv/shakespeare_nu6.csv'
 
+def set_data [name: string] {
+  $name | to csv | save db.txt
+}
+
+def get_data [name: string] {
+  open $name
+}
+
 def check_params2 [record] {
   check_params $record.line_id $record.play_name
 }
