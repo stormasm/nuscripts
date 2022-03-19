@@ -24,7 +24,7 @@ def main [] {
 }
 
 def main1 [] {
-  open $filename | select line_id play_name | each { |id| check_params2 $id} | flatten | to csv | save iris.csv
+  open $filename | select line_id play_name | each { |id| check_params2 $id} | flatten | to csv | save shakespeare.csv
 }
 
 def main2 [] {
