@@ -12,7 +12,7 @@ def check_playname [id: int, name: string] {
   let previous_playname = get_data db.txt
   if ($name != $previous_playname) {
     set_data $name
-    echo $id $name
+    build-string $name " " ($id)
   } else {
     $nothing
   }
