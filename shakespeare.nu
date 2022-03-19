@@ -1,4 +1,5 @@
-let filename = '/Users/ma/j/tmp17/nudata/csv/shakespeare.csv'
+#let filename = '/Users/ma/j/tmp17/nudata/csv/shakespeare.csv'
+let filename = '/Users/ma/j/tmp17/dataset/csv/shakespeare_nu6.csv'
 
 def check_params2 [record] {
   check_params $record.line_id $record.play_name
