@@ -1,4 +1,7 @@
 
+# From this conversation
+# https://discord.com/channels/601130461678272522/683070703716925568/1166453881446858763
+
 def show_mem [] {
     mut recs = []
     mut previous = 0
