@@ -2,6 +2,14 @@
 # From this conversation
 # https://discord.com/channels/601130461678272522/683070703716925568/1166453881446858763
 
+def format_auto [] {
+    $env.config.filesize.format = auto
+}
+
+def format_b [] {
+    $env.config.filesize.format = b
+}
+
 def show_mem [] {
     mut recs = []
     mut previous = 0
@@ -19,4 +27,8 @@ def show_mem_01 [] {
         sleep 10ms
         echo [{index: ($r) mem: (debug info | get process.memory)}]
     } | collect  {$in} | flatten
+}
+
+def table_ex [] {
+    debug info | table -e --expand-deep 1
 }
