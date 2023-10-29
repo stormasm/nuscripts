@@ -22,3 +22,10 @@ open $nu.history-path |
         first $lines |
         save -f why.txt
 }
+
+def openmelines [filename lines] {
+open $filename |
+        lines |
+        first $lines |
+        save -f why.txt
+}
