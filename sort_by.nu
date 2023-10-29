@@ -29,3 +29,10 @@ open $filename |
         first $lines |
         save -f why.txt
 }
+
+def groupby [filename] {
+open $filename |
+        lines |
+        split column ' ' cmd |
+        group-by cmd --to-table |
+}
