@@ -13,3 +13,12 @@ open $nu.history-path |
         first 10 |
         table -n 1
 }
+
+### take your history.txt file and make a smaller version of it
+
+def savenlines [lines] {
+open $nu.history-path |
+        lines |
+        first $lines |
+        save -f why.txt
+}
