@@ -17,3 +17,7 @@ def test03 [] {
     let sorted = [1 2 3 4]
     $sorted | range 1.. | zip ($sorted | range ..(-2))
 }
+
+def test04 [] {
+    [albuquerque denver dallas] | zip [nm co tx]
+}
