@@ -1,4 +1,8 @@
 
+```nu
+open photo1.csv | get group | each {|e| $e =~ 'photo'}
+```
+
 #### kubouch
 
 * gradient_benchmark.nu
