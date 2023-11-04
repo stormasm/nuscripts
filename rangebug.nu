@@ -3,9 +3,15 @@
 # so that you can compare pairs of successive elements, e.g.
 # [1, 2, 3] would become [[1, 2], [2, 3]]
 
+# this crash and burns nushell in debug mode but not release mode
 def test01 [] {
     let sorted = [storm]
     $sorted | range 1.. | zip ($sorted | range ..(-2))
+}
+
+# this crash and burns nushell in debug mode but not release mode
+def test01a [] {
+    ([1] | range ..(-2))
 }
 
 def test02 [] {
