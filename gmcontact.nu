@@ -3,5 +3,7 @@
 ### regex match on the group name...
 
 def test1 [] {
-    open photo1.csv | get group | each {|e| $e =~ 'photo'}
+
+    let photo1 = "data" | path join "test01.csv"
+    open $photo1 | get group | each {|e| $e =~ 'photo'}
 }
