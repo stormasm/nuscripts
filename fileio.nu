@@ -5,7 +5,7 @@ use std log
 
 use log.nu throw-error
 
-def getfile [dir: path] {
+def get_filename [dir: path] {
     let src_file = $dir | path join "test01.csv"
 
     print $src_file
@@ -20,7 +20,7 @@ def getfile [dir: path] {
 }
 
 def test10 [dir: path] {
-    let csv = getfile $dir
+    let csv = get_filename $dir
     #print $csv
     open $csv | get group | each {|e| $e =~ 'photo'}
 }
