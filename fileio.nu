@@ -5,18 +5,18 @@ use std log
 
 use log.nu throw-error
 
-def open-package-file [dir: path] {
-    let package_file = $dir | path join "test01.csv"
+def open-file [dir: path] {
+    let src_file = $dir | path join "test01.csv"
 
-    print $package_file
+    print $src_file
 
-    if not ($package_file | path exists) {
+    if not ($src_file | path exists) {
         throw-error "package_file_not_found" (
             $'Could not find "package.nuon" in ($dir) or any parent directory.'
         )
     }
 
-    $package_file
+    $src_file
 }
 
 def test10 [dir: path] {
