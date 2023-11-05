@@ -16,23 +16,11 @@ def open-package-file [dir: path] {
         )
     }
 
-    let package = open $package_file
-
-    log debug "checking package file for missing required keys"
-    let required_keys = [$. $.name $.version $.type]
-    let missing_keys = $required_keys
-        | where {|key| ($package | get -i $key) == null}
-    if not ($missing_keys | is-empty) {
-        throw-error "invalid_package_file" (
-            $"($package_file) is missing the following required keys:"
-            + $" ($missing_keys | str join ', ')"
-        )
-    }
-
-    $package
+    $package_file
 }
 
 def test10 [dir: path] {
-    let package = open-package-file $dir
-    print $package
+    let csv = open-package-file $dir
+    #print $csv
+    open $csv | get group | each {|e| $e =~ 'photo'}
 }
