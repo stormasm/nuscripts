@@ -35,3 +35,7 @@ def test5 [] {
     # Outputs "Hello, Mark!" and three more similar lines.
     $names | enumerate | each { |it| $"($it.index) - ($it.item)" }
 }
+
+def test6 [] {
+    [true, false, false, true, false, true] | enumerate | each { |r| print $r}
+}
