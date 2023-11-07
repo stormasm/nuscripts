@@ -43,3 +43,11 @@ def test6 [] {
 def test7 [] {
     [true, false, false, true, false, true] | enumerate | each { |r| if $r.item == true {print $r.index}}
 }
+
+def test8 [] {
+    [true, false, false, true, false, true] | enumerate | each { |r| if $r.item == true {$r.index}}
+}
+
+def test9 [] {
+    [true, false, false, true, false, true] | where $it == true
+}
