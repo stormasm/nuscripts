@@ -1,6 +1,6 @@
 
 def filter-csv [filename: string, keyword: string] {
-    open $filename | filter {|row| $row.group | str contains photo}
+    open $filename | filter {|row| $row.group | str contains $keyword}
 }
 
 def filter-test01 [keyword: string] {
