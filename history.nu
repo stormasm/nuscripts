@@ -1,6 +1,6 @@
 
 if ( "myhistory.txt" | path exists) {
-    #print 'removing file'
+    # print 'removing file'
     rm myhistory.txt
 }
 
@@ -16,6 +16,12 @@ update_history_file michael
 update_history_file iris
 update_history_file_with_list [ls time version cls]
 
-let nogo = [cls exit time ls version]
+def partone [] {
+    let nogo = [cls exit time ls version]
+    open myhistory.txt | lines | filter {|x| not ($x in $nogo)}
+}
 
-open myhistory.txt | lines | filter {|x| not ($x in $nogo)}
+let myanswer = partone
+#print $myanswer
+#let myanswer2 = update_history_file_with_list $myanswer
+#print $myanswer2
