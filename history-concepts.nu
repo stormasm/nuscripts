@@ -11,3 +11,5 @@ open "./data/test02.csv" | filter {|e| $e.name != "exit"} | save -f tmp.csv
 
 append ("foo\n" | str trim) | save --append foo.txt
 append ("bar\n" | str trim) | save --append foo.txt
+
+open myhistory2.txt | lines | filter {|e| $e != "exit"}
