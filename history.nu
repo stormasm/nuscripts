@@ -12,16 +12,16 @@ def update_history_file_with_list [entries] {
     $entries | each { |it| $it } | save --append newhistory.txt
 }
 
-update_history_file michael
-update_history_file iris
-update_history_file_with_list [ls time version cls]
+#update_history_file michael
+#update_history_file iris
+#update_history_file_with_list [ls time version cls]
 
 def partone [] {
-    let nogo = [cls exit time ls version]
-    open newhistory.txt | lines | filter {|x| not ($x in $nogo)}
+    let nogo = [cls exit]
+    open history.txt | lines | filter {|x| not ($x in $nogo)}
 }
 
-cat newhistory.txt
+cat history.txt
 let myanswer = partone
 print $myanswer
 update_history_file_with_list $myanswer

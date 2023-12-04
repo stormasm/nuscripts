@@ -1,0 +1,10 @@
+cls
+time
+date
+cls
+exit
+exit
+cls
+version
+time
+ls
