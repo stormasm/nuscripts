@@ -1,15 +1,15 @@
 
-if ( "newhistory.txt" | path exists) {
+if ( "historynew.txt" | path exists) {
     # print 'removing file'
-    rm newhistory.txt
+    rm historynew.txt
 }
 
 def update_history_file [entry] {
-    append ($entry | str trim) | save --append newhistory.txt
+    append ($entry | str trim) | save --append historynew.txt
 }
 
 def update_history_file_with_list [entries] {
-    $entries | each { |it| $it } | save --append newhistory.txt
+    $entries | each { |it| $it } | save --append historynew.txt
 }
 
 #update_history_file michael
@@ -17,12 +17,12 @@ def update_history_file_with_list [entries] {
 #update_history_file_with_list [ls time version cls]
 
 def partone [] {
-    let nogo = [cls exit]
+    let nogo = [cls exit jjj version gs l iox ioxg iox01 iox02 ls "help commands"]
     open history.txt | lines | filter {|x| not ($x in $nogo)}
 }
 
-cat history.txt
+#cat history.txt
 let myanswer = partone
-print $myanswer
+#print $myanswer
 update_history_file_with_list $myanswer
-cat newhistory.txt
+#cat historynew.txt
