@@ -21,6 +21,10 @@ def partone [] {
     open history.txt | lines | filter {|x| not ($x in $nogo)}
 }
 
+def partwo [] {
+    open history.txt | lines | find --invert help
+}
+
 #cat history.txt
 let myanswer = partone
 #print $myanswer
