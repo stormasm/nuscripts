@@ -7,28 +7,20 @@ def update_history_file_with_list [entries] {
     $entries | each { |it| $it } | save --append historynew.txt
 }
 
-#update_history_file michael
-#update_history_file iris
-#update_history_file_with_list [ls time version cls]
-
 def partone [] {
     let nogo = [cls exit jjj version gs l iox ioxg iox01 iox02 ls "help commands"]
     open history.txt | lines | filter {|x| not ($x in $nogo)}
 }
 
 def partwo [] {
-    open history.txt | lines | find --invert help ls describe let
+    open history.txt | lines | find --invert history source cd open gd gm gcom help ls describe let
 }
 
 def go [] {
     if ( "historynew.txt" | path exists) {
-        # print 'removing file'
         rm historynew.txt
     }
 
-    #cat history.txt
     let myanswer = partwo
-    #print $myanswer
     update_history_file_with_list $myanswer
-    #cat historynew.txt
 }
