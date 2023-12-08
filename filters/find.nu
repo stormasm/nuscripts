@@ -8,5 +8,5 @@ def partone [] {
 }
 
 def partwo [] {
-    $mylines | find --invert help
+    $mylines | find --invert help ls john
 }
