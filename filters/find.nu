@@ -1,5 +1,6 @@
 
-let mylines = ["john ran to the store", "rick ate hotdogs", "mike took the dog for a walk", "help", "ls"]
+let mylines01 = ["john ran to the store", "rick ate hotdogs", "mike took the dog for a walk", "help", "ls"]
+let mylines02 = ["help commands | where command_type = "plugin"", "let x = 1", "describe def", "1 + 3"]
 
 # Note this only filters out strings that only have one word in them
 def partone [] {
@@ -8,5 +9,5 @@ def partone [] {
 }
 
 def partwo [] {
-    $mylines | find --invert help ls john
+    $mylines02 | find --invert help let describe
 }
