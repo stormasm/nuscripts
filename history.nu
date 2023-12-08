@@ -1,9 +1,4 @@
 
-if ( "historynew.txt" | path exists) {
-    # print 'removing file'
-    rm historynew.txt
-}
-
 def update_history_file [entry] {
     append ($entry | str trim) | save --append historynew.txt
 }
@@ -22,11 +17,18 @@ def partone [] {
 }
 
 def partwo [] {
-    open history.txt | lines | find --invert help
+    open history.txt | lines | find --invert help ls describe let
 }
 
-#cat history.txt
-let myanswer = partone
-#print $myanswer
-update_history_file_with_list $myanswer
-#cat historynew.txt
+def go [] {
+    if ( "historynew.txt" | path exists) {
+        # print 'removing file'
+        rm historynew.txt
+    }
+
+    #cat history.txt
+    let myanswer = partwo
+    #print $myanswer
+    update_history_file_with_list $myanswer
+    #cat historynew.txt
+}
